@@ -24,3 +24,5 @@ while True:
 filtered_wordlist_withtuples = [(x, y) for x, y in word_and_wordlength if y == user_wordlength]
 filtered_wordlist = [tuple[0] for tuple in filtered_wordlist_withtuples]
 print(filtered_wordlist)
+
+print('test')
