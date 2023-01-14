@@ -11,23 +11,23 @@ def get_word_lengths(filename):
 
 def merge_list(listname):
   return "".join(listname)
-n = 0
-def user_most_common_check(most_common_letter_ranking):
+
+def user_most_common_check(most_common_letter_ranking): #this ranks and picks the first most common letter
+  n = 0
   for string in most_common_letter_ranking:
     string = most_common_in_merged_list[n]
     string = string[0]
-    user_response = input('Is %s in your word? (True/False)' % (string))
+    user_response = input('Is "%s" in your word? (True/False)' % (string))
     if user_response == "False":
-        n ++ 1
+        n += 1
         continue
     elif user_response == "True":
         print("Thanks for the info! <3")
         n = 0
-        break
+        return string
     else:
         print("Invalid input. Please enter True or False.")
   
-
 word_and_wordlength = get_word_lengths('words.txt')
 
 while True:
