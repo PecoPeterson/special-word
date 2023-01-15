@@ -45,14 +45,14 @@ while True:
 filtered_wordlist_withtuples = [(x, y) for x, y in word_and_wordlength if y == user_wordlength]
 filtered_wordlist = [tuple[0] for tuple in filtered_wordlist_withtuples]
 #print(filtered_wordlist)
-#Reaching this point is required for each time the program is used
+#makes a list with JUST the words
 
-#Add the code which takes the unique characters in every word here
-#START
+words_with_uniquechar = [(word, ''.join(set(word))) for word in filtered_wordlist]
+#print(Words_with_uniquechar)
+#Makes a new list with words and their unique characters (each item is a tuple)
 
-
-
-#END
+unique_characters = [tuple_item[1] for tuple_item in words_with_uniquechar]
+print(unique_characters)
 
 merged_list = merge_list(filtered_wordlist)
 c = Counter(merged_list)
@@ -60,4 +60,4 @@ most_common_in_merged_list = c.most_common(26) #needed to rank the most common l
 
 #print(most_common_in_merged_list)
 
-user_most_common_check(most_common_in_merged_list)
+#user_most_common_check(most_common_in_merged_list)
