@@ -52,12 +52,13 @@ words_with_uniquechar = [(word, ''.join(set(word))) for word in filtered_wordlis
 #Makes a new list with words and their unique characters (each item is a tuple)
 
 unique_characters = [tuple_item[1] for tuple_item in words_with_uniquechar]
-print(unique_characters)
+#print(unique_characters)
+#makes separate list for the unique characters
 
 merged_list = merge_list(filtered_wordlist)
 c = Counter(merged_list)
-most_common_in_merged_list = c.most_common(26) #needed to rank the most common letters in merged list
-
+most_common_in_merged_list = c.most_common(26)
 #print(most_common_in_merged_list)
+#needed to rank the most common letters in merged list
 
 #user_most_common_check(most_common_in_merged_list)
