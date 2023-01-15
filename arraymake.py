@@ -47,6 +47,13 @@ filtered_wordlist = [tuple[0] for tuple in filtered_wordlist_withtuples]
 #print(filtered_wordlist)
 #Reaching this point is required for each time the program is used
 
+#Add the code which takes the unique characters in every word here
+#START
+
+
+
+#END
+
 merged_list = merge_list(filtered_wordlist)
 c = Counter(merged_list)
 most_common_in_merged_list = c.most_common(26) #needed to rank the most common letters in merged list
