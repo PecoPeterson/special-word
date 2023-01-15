@@ -15,7 +15,7 @@ def merge_list(listname):
 def user_most_common_check(most_common_letter_ranking): #this ranks and picks the first most common letter
   n = 0
   for string in most_common_letter_ranking:
-    string = most_common_in_merged_list[n]
+    string = most_common_unique_char[n]
     string = string[0]
     user_response = input('Is "%s" in your word? (True/False)' % (string))
     if user_response == "False":
@@ -55,10 +55,10 @@ unique_characters = [tuple_item[1] for tuple_item in words_with_uniquechar]
 #print(unique_characters)
 #makes separate list for the unique characters
 
-merged_list = merge_list(filtered_wordlist)
+merged_list = merge_list(unique_characters)
 c = Counter(merged_list)
-most_common_in_merged_list = c.most_common(26)
-#print(most_common_in_merged_list)
+most_common_unique_char = c.most_common(26)
+print(most_common_unique_char)
 #needed to rank the most common letters in merged list
 
-#user_most_common_check(most_common_in_merged_list)
+user_most_common_check(most_common_unique_char)
