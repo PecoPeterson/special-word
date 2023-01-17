@@ -58,7 +58,7 @@ unique_characters = [tuple_item[1] for tuple_item in words_with_uniquechar]
 merged_list = merge_list(unique_characters)
 c = Counter(merged_list)
 most_common_unique_char = c.most_common(26)
-print(most_common_unique_char)
+#print(most_common_unique_char)
 #needed to rank the most common letters in merged list
 
-user_most_common_check(most_common_unique_char)
+most_common_letter = user_most_common_check(most_common_unique_char)
