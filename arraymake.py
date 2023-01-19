@@ -1,5 +1,7 @@
 from collections import Counter
 
+# kurwa
+
 def get_word_lengths(filename):
   word_lengths = []
   with open(filename, 'r') as f:
