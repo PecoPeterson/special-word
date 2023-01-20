@@ -64,4 +64,5 @@ most_common_unique_char = c.most_common(26)
 #needed to rank the most common letters in merged list
 
 most_common_letter = user_most_common_check(most_common_unique_char)
+#print(most_common_letter)
 #gets the most common letter and stores it, inteded to be used to filter the word list further based on position
