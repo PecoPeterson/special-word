@@ -1,4 +1,5 @@
 from collections import Counter
+import collections
 
 def string_lengths(file_path): #reads the file and makes a list containing the words and their length
     with open(file_path, "r") as file:
@@ -33,13 +34,14 @@ def filter_tuples(tuple_list, length):
 filtered_list = filter_tuples(word_lengths, input_value)
 #print(filtered_list)
 
-def get_unique_string(original_list):
-    return ''.join(''.join(set(string)) for string, value in original_list)
-unique_char_string = get_unique_string(filtered_list)
+def flatten_and_set(original_list):
+    result = [set(x[0]) for x in original_list]
+    return "".join([str(elem) for sublist in result for elem in sublist])
+#makes a variable with the unique characters of the first items in a list of tuples
 
-def get_sorted_list(original_list):
-    new_string = get_unique_string(original_list)
-    char_count = Counter(new_string)
-    return sorted(new_string, key=lambda x: char_count[x], reverse=True)
-unique_char_string_ranking = get_sorted_list(unique_char_string)
-print(unique_char_string_ranking) 
+def char_frequency(string):
+    counter = collections.Counter(string)
+    char_freq = counter.most_common()
+    char_list = [char for char, freq in char_freq]
+    return char_list
+#takes in a string and returns a list of all the characters based on frequency
