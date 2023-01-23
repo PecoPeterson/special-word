@@ -45,3 +45,7 @@ def char_frequency(string):
     char_list = [char for char, freq in char_freq]
     return char_list
 #takes in a string and returns a list of all the characters based on frequency
+
+raw_characters = flatten_and_set(filtered_list)
+char_ranking = char_frequency(raw_characters)
+print(char_ranking)
