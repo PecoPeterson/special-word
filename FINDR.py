@@ -46,6 +46,37 @@ def char_frequency(string):
     return char_list
 #takes in a string and returns a list of all the characters based on frequency
 
+def search_list(my_list):
+    found_letter = ""
+    positions = []
+    while my_list:
+        item = my_list[0]
+        while True:
+            try:
+                response = input("Is " + item + " your letter? (yes/no)").lower()
+                if response == "yes" or response == "no":
+                    break
+                else:
+                    raise ValueError
+            except ValueError:
+                print("Please enter a valid response (yes or no)")
+        if response == "yes":
+            found_letter = item
+            while True:
+                try:
+                    position = input("What are the positions of this letter?")
+                    if position.isnumeric():
+                        positions.append(int(position))
+                        break
+                    else:
+                        raise ValueError
+                except ValueError:
+                    print("Please enter a valid position (numeric)")
+            break
+        else:
+            my_list.pop(0)
+    return (found_letter, positions)
+
 raw_characters = flatten_and_set(filtered_list)
 char_ranking = char_frequency(raw_characters)
-print(char_ranking)
+#print(char_ranking)
