@@ -53,25 +53,26 @@ def search_list(my_list):
         item = my_list[0]
         while True:
             try:
-                response = input("Is " + item + " your letter? (yes/no)").lower()
+                response = input("Is " + item + " your letter? (yes/no) \n").lower()
                 if response == "yes" or response == "no":
                     break
                 else:
                     raise ValueError
             except ValueError:
-                print("Please enter a valid response (yes or no)")
+                print("Please enter a valid response (yes or no) \n")
         if response == "yes":
             found_letter = item
             while True:
                 try:
-                    position = input("What are the positions of this letter?")
+                    position = input("What are the positions of this letter? \n")
                     if position.isnumeric():
-                        positions.append(int(position))
+                        position = int(position) - 1
+                        positions.append(position)
                         break
                     else:
                         raise ValueError
                 except ValueError:
-                    print("Please enter a valid position (numeric)")
+                    print("Please enter a valid position (numeric) \n")
             break
         else:
             my_list.pop(0)
@@ -79,4 +80,11 @@ def search_list(my_list):
 
 raw_characters = flatten_and_set(filtered_list)
 char_ranking = char_frequency(raw_characters)
-#print(char_ranking)
+
+print("this is the character ranking",char_ranking,"\n\n")
+
+char_positions = search_list(char_ranking)
+
+print("this is the character ranking",char_ranking,"\n\n")
+print("confirmed used character: ", char_positions[0], "\n")
+print("positions of character: ", char_positions[1], "\n")
