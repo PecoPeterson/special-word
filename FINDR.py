@@ -64,15 +64,13 @@ def search_list(my_list):
             found_letter = item
             while True:
                 try:
-                    position = input("What are the positions of this letter? \n")
-                    if position.isnumeric():
-                        position = int(position) - 1
-                        positions.append(position)
-                        break
-                    else:
-                        raise ValueError
+                    position = input("What are the positions of this letter? (comma separated) \n")
+                    position = position.split(',')
+                    position = [int(x.strip()) - 1 for x in position]
+                    positions.extend(position)
+                    break
                 except ValueError:
-                    print("Please enter a valid position (numeric) \n")
+                    print("Please enter valid positions (comma separated) \n")
             break
         else:
             my_list.pop(0)
