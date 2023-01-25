@@ -82,9 +82,14 @@ char_ranking = char_frequency(raw_characters)
 print("this is the character ranking",char_ranking,"\n\n")
 
 char_positions = search_list(char_ranking)
-print(char_positions)
+print(char_positions, '\n')
 
+def filter_words(filtered_list, char_positions):
+    char, positions = char_positions
+    return [(word, length) for word, length in filtered_list if all(word[i] == char for i in positions)]
 
+filtered_list = filter_words(filtered_list, char_positions)
+print(filtered_list)
 
 #print("this is the character ranking",char_ranking,"\n\n")
 #print("confirmed used character: ", char_positions[0], "\n")
