@@ -84,7 +84,10 @@ char_ranking = char_frequency(raw_characters)
 print("this is the character ranking",char_ranking,"\n\n")
 
 char_positions = search_list(char_ranking)
+print(char_positions)
 
-print("this is the character ranking",char_ranking,"\n\n")
-print("confirmed used character: ", char_positions[0], "\n")
-print("positions of character: ", char_positions[1], "\n")
+
+
+#print("this is the character ranking",char_ranking,"\n\n")
+#print("confirmed used character: ", char_positions[0], "\n")
+#print("positions of character: ", char_positions[1], "\n")
