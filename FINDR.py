@@ -96,6 +96,17 @@ def filter_words(filtered_list, char_positions):
 filtered_list = filter_words(filtered_list, char_positions) #refilters filtered_list
 print(filtered_list, '\n\n', noted_letters)
 
+while len(filtered_list) > 1:
+    flatten_and_set(filtered_list)
+    raw_characters = flatten_and_set(filtered_list)
+    char_ranking = char_frequency(raw_characters)
+    print("this is the character ranking",char_ranking,"\n\n")
+    char_positions = search_list(char_ranking)
+    print(char_positions, '\n')
+    filtered_list = filter_words(filtered_list, char_positions) #refilters filtered_list
+    print(filtered_list, '\n\n', noted_letters)
+
+print("Your words was: ", filtered_list)
 #print("this is the character ranking",char_ranking,"\n\n")
 #print("confirmed used character: ", char_positions[0], "\n")
 #print("positions of character: ", char_positions[1], "\n")
