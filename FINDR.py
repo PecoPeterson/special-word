@@ -59,6 +59,7 @@ def search_list(my_list):
             try:
                 response = input("Is " + item + " your letter? (yes/no) \n").lower()
                 if response == "yes" or response == "no":
+                    noted_letters.append(item) #append found letter to the list
                     break
                 else:
                     raise ValueError
@@ -66,7 +67,6 @@ def search_list(my_list):
                 print("Please enter a valid response (yes or no) \n")
         if response == "yes":
             found_letter = item
-            noted_letters.append(found_letter) #append found letter to the list
             while True:
                 try:
                     position = input("What are the positions of this letter? (comma separated) \n")
