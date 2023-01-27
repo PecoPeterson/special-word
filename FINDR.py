@@ -47,6 +47,8 @@ def char_frequency(string):
 #takes in a string and returns a list of all the characters based on frequency
 
 noted_letters = []
+times_guessed = 0
+
 def search_list(my_list):
     found_letter = ""
     positions = []
@@ -79,6 +81,8 @@ def search_list(my_list):
             break
         else:
             my_list.pop(0)
+            global times_guessed
+            times_guessed += 1
     return (found_letter, positions)
 
 raw_characters = flatten_and_set(filtered_list)
@@ -94,7 +98,7 @@ def filter_words(filtered_list, char_positions):
     return [(word, length) for word, length in filtered_list if all(word[i] == char for i in positions)]
 
 filtered_list = filter_words(filtered_list, char_positions) #refilters filtered_list
-print(filtered_list)
+#print(filtered_list) #prints the updated list
 
 while len(filtered_list) > 1:
     flatten_and_set(filtered_list)
@@ -102,8 +106,9 @@ while len(filtered_list) > 1:
     char_ranking = char_frequency(raw_characters)
     #print("this is the character ranking",char_ranking, "\n")
     char_positions = search_list(char_ranking)
-    print(char_positions, "\n")
+    #print(char_positions, "\n")
     filtered_list = filter_words(filtered_list, char_positions) #refilters filtered_list
-    print(filtered_list, '\n')
+    #print(filtered_list, '\n\n') #prints the updated list
 
 print("Your words was: ", filtered_list)
+print("The number of wrong guesses:", times_guessed)
