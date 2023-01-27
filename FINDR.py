@@ -84,29 +84,26 @@ def search_list(my_list):
 raw_characters = flatten_and_set(filtered_list)
 char_ranking = char_frequency(raw_characters)
 
-print("this is the character ranking",char_ranking,"\n\n")
+print("this is the character ranking",char_ranking,"\n")
 
 char_positions = search_list(char_ranking)
-print(char_positions, '\n')
+#print(char_positions, '\n')
 
 def filter_words(filtered_list, char_positions):
     char, positions = char_positions
     return [(word, length) for word, length in filtered_list if all(word[i] == char for i in positions)]
 
 filtered_list = filter_words(filtered_list, char_positions) #refilters filtered_list
-print(filtered_list, '\n\n', noted_letters)
+print(filtered_list)
 
 while len(filtered_list) > 1:
     flatten_and_set(filtered_list)
     raw_characters = flatten_and_set(filtered_list)
     char_ranking = char_frequency(raw_characters)
-    print("this is the character ranking",char_ranking,"\n\n")
+    #print("this is the character ranking",char_ranking, "\n")
     char_positions = search_list(char_ranking)
-    print(char_positions, '\n')
+    print(char_positions, "\n")
     filtered_list = filter_words(filtered_list, char_positions) #refilters filtered_list
-    print(filtered_list, '\n\n', noted_letters)
+    print(filtered_list, '\n')
 
 print("Your words was: ", filtered_list)
-#print("this is the character ranking",char_ranking,"\n\n")
-#print("confirmed used character: ", char_positions[0], "\n")
-#print("positions of character: ", char_positions[1], "\n")
