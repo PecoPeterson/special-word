@@ -6,3 +6,5 @@ The script then narrows down the list of possible words by asking the user if ce
 The script also keeps track of the number of times it has guessed incorrectly, and prints this at the end of the game.
 
 The script is made of several functions, each one responsible for a specific task:
+
+string_lengths(file_path): reads the file and makes a list containing the words and their length
