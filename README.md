@@ -4,3 +4,5 @@ This script is a game that attempts to guess a word chosen by the user. The user
 The script then narrows down the list of possible words by asking the user if certain letters are in the word, and if so, in which positions. The script continues to filter the list of words based on the user's input until it is able to guess the correct word.
 
 The script also keeps track of the number of times it has guessed incorrectly, and prints this at the end of the game.
+
+The script is made of several functions, each one responsible for a specific task:
