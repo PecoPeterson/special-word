@@ -8,3 +8,5 @@ The script also keeps track of the number of times it has guessed incorrectly, a
 The script is made of several functions, each one responsible for a specific task:
 
 string_lengths(file_path): reads the file and makes a list containing the words and their length
+
+filter_tuples(tuple_list, length): filters the tuples according to the length
