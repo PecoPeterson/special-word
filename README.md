@@ -10,3 +10,7 @@ The script is made of several functions, each one responsible for a specific tas
 string_lengths(file_path): reads the file and makes a list containing the words and their length
 
 filter_tuples(tuple_list, length): filters the tuples according to the length
+
+flatten_and_set(original_list): makes a variable with the unique characters of the first items in a list of tuples
+
+char_frequency(string): takes in a string and returns a list of all the characters based on frequency
