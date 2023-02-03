@@ -14,3 +14,7 @@ filter_tuples(tuple_list, length): filters the tuples according to the length
 flatten_and_set(original_list): makes a variable with the unique characters of the first items in a list of tuples
 
 char_frequency(string): takes in a string and returns a list of all the characters based on frequency
+
+search_list(my_list): takes a list as input, and ask the user if the letter is in the word, if yes, it ask the user to enter the positions of the letter
+
+filter_words(filtered_list, char_positions): filters the words according to the character and position provided by the user
