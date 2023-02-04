@@ -18,3 +18,5 @@ char_frequency(string): takes in a string and returns a list of all the characte
 search_list(my_list): takes a list as input, and ask the user if the letter is in the word, if yes, it ask the user to enter the positions of the letter
 
 filter_words(filtered_list, char_positions): filters the words according to the character and position provided by the user
+
+The main body of the script uses these functions to filter the list of words and ask the user for input until it can guess the word.
